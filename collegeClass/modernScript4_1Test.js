@@ -1,26 +1,33 @@
 //문제 풀이
-// let schedule = {};
+let schedule = {};
 
-// alert( isEmpty(schedule) ); // true
+alert( isEmpty(schedule) ); // true
 
-// schedule["8:30"] = "get up";
+schedule["8:30"] = "get up";
 
-// alert( isEmpty(schedule) ); // false
-// function isEmpty(emp){
-//     for(let key in emp){ //객체의 프로퍼티가 하나도 없으면 
-//         return false;    //for문이 작동안함
-//     }
-//     return true;
+alert( isEmpty(schedule) ); // false
+function isEmpty(emp){
+    for(let key in emp){ //객체의 프로퍼티가 하나도 없으면 
+        return false;    //for문이 작동안함
+    }
+    return true;
 
-// }
+}
 
-//문제 2
+// //문제 2
 // let user={}
 // user.name="jone";
 // user.surname="Smith";
 // user.name="pete";
 // delete user.name;
 // console.log(user);
+
+// const user = { 
+//   name: "John"
+// };
+// // 아래 코드는 에러 없이 실행될까요?
+// user.name = "Pete";
+// //참조하는 주소값만 안바뀌면 된다
 
 //문제 3
 // let salaries = {
@@ -41,30 +48,30 @@
 
 //문제 3
 // 함수 호출 전
-let menu = {
-    width: 200,
-    height: 300,
-    title: "My menu"
-  };
+// let menu = {
+//     width: 200,
+//     height: 300,
+//     title: "My menu"
+//   };
   
-  multiplyNumeric(menu);
+//   multiplyNumeric(menu);
   
-  function multiplyNumeric(emp){
-      //isNAN은 NAN이면 ture 아니면(숫자면)false
-      //왜사용 하나면 NAN==NAN 은 안됨
-      //isFinite는 숫자면 ture 숫자가 아니거나 Infinity면 false
-      for(let s in emp){
-          if(!isNaN(emp[s])){
-              emp[s]=emp[s]*2;
-            }
-        }
-    }
-    console.log(isNaN(123));//false
-    console.log(menu);
+//   function multiplyNumeric(emp){
+//       //isNAN은 NAN이면 ture 아니면(숫자면)false
+//       //왜사용 하나면 NAN==NAN 은 안됨
+//       //isFinite는 숫자면 ture 숫자가 아니거나 Infinity면 false
+//       for(let s in emp){
+//           if(!isNaN(emp[s])){
+//               emp[s]=emp[s]*2;
+//             }
+//         }
+//     }
+//     console.log(isNaN(123));//false
+//     console.log(menu);
 
-    // 함수 호출 후
-  //   menu = {
-  //     width: 400,
-  //     height: 600,
-  //     title: "My menu"
-  //   };
+//     // 함수 호출 후
+//     menu = {
+//       width: 400,
+//       height: 600,
+//       title: "My menu"
+//     };

@@ -1,9 +1,12 @@
-//첫번째 문제
-function myShortString(str){
-    let arr=str.split('-');
-    for(s of arr){
-        s.substring(0,1).toUpperCase();
-    }
-    return arr.join('');
+// //첫번째 문제
+// camelize("background-color") == 'backgroundColor';
+// camelize("list-style-image") == 'listStyleImage';
+// camelize("-webkit-transition") == 'WebkitTransition';
+function camelize(arr){
+    let temp=arr.split('-');
+    temp.forEach(s => {
+        s[0].toUpperCase()+s.substring(1);
+    });
+    return temp.join('');
 }
-console.log(myShortString("webkit-transition"));
+console.log(camelize("-webkit-transition"));
