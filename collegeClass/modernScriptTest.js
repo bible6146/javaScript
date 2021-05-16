@@ -1,18 +1,16 @@
-let calc = new Calculator;
-calc.addMethod("*", (a, b) => a * b);
+let room = {
+  number: 23
+};
 
-console.log( calc.calculate("3 + 7") ); // 10
-console.log(calc.calculate("1 * 2"));
-function Calculator(){
-    this.calculate=function (str){
-        let temp=str.split(' ');
-        return this.Method[temp[1]](+temp[0],+temp[2]);       
-    }
-    this.Method={
-        "+":(b,c)=>b+c,
-        "-":(b,c)=>a-c
-    }
-    this.addMethod=function (name,fun){
-        this.Method[name]=fun;
-    }
-}
+let meetup = {
+  title: "Conference",
+  occupiedBy: [{name: "John"}, {name: "Alice"}],
+  place: room
+};
+
+room.occupiedBy = meetup;
+meetup.self = meetup;
+
+alert( JSON.stringify(meetup, function replacer(key, value) {
+  return (key != "" && value == meetup) ? undefined : value;
+}));

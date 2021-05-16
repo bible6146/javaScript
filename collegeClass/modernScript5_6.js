@@ -1,26 +1,65 @@
-let arr=[1,7,7,7,7,10];
-let a=Symbol("222");
 
-arr[Symbol.iterator] = function() {
+//첫번쨰 문제
+let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
 
-    // Symbol.iterator는 이터레이터 객체를 반환합니다.
-    // 2. 이후 for..of는 반환된 이터레이터 객체만을 대상으로 동작하는데, 이때 다음 값도 정해집니다.
+alert( aclean(arr) ); 
+
+function aclean(arr){
+ let sum=[];
+ let set=new Set();
+ arr.forEach(e=>{
+   let temp=e.toUpperCase().split('').sort().join('');
+   if(!set.has(temp)){
+     console.log(set.has(temp));
+     set.add(temp);
+      sum.push(e);
+   }
+ } );
+ return sum;
+}
+
+
+//두번째 문제
+let map = new Map();
+
+map.set("name", "John");
+
+let keys = Array.from(map.keys());
+
+// map/keys()메소드는 키값의 배열이 아닌
+//이터러터 객체를 반환해서 배열 메소드를 사용하려면 
+//Array.from으로 진짜 배열로 바꾸어야 한다.
+//Array.from은 이터러터 객체를 배열으로 바꿀때 
+//for of 에서 값을 읽어오듯이 읽어와서 배열로 바꿔준다
+
+keys.push("more");
+
+
+
+
+let a={
+  a:1,
+  b:10,
+  [Symbol.iterator](){
     return {
-      current: this[0],
-      last: this[this.length-1],
-  
-      // 3. for..of 반복문에 의해 반복마다 next()가 호출됩니다.
-      next() {
-        // 4. next()는 값을 객체 {done:.., value :...}형태로 반환해야 합니다.
-        if (this.current <= this.last) {
-          return { done: false, value: this.current++ };
-        } else {
-          return { done: true };
+      start:this.a,
+      end:this.b,
+
+      next(){
+        if(this.start<this.end){
+          return {
+            done:false,value:this.start++
+          }
+        }
+        else {
+          return{done:true}
         }
       }
-    };
-  };
-
-  for(let a of arr){
-      console.log(a);
   }
+  }
+}
+for(let ss of a){
+  console.log(ss);
+}
+let temp=Array.from(a);
+console.log(temp);
