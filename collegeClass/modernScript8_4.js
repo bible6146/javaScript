@@ -15,11 +15,13 @@
 // // toString이 동작하는 부분입니다.
 // alert(dictionary); // "apple,__proto__"
 
-function Rabbit(name) {
-    this.name = name;
-  }
-  Rabbit.prototype.sayHi = function() {
-    alert(this.name);
-  };
+// function Rabbit(name) {
+//     this.name = name;
+//   }
+//   Rabbit.prototype.sayHi = function() {
+//     alert(this.name);
+//   };
   
-  let rabbit = new Rabbit("Rabbit");
+//   let rabbit = new Rabbit("Rabbit");
+let a={};
+  alert(Object.getOwnPropertyDescriptor(a))
